@@ -92,5 +92,4 @@ container.addEventListener('click', (e) => {
   }
 });
 
-
 window.addEventListener('DOMContentLoaded', UI.displayBooks());
