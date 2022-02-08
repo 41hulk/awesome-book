@@ -11,7 +11,8 @@ const container = document.querySelector(".book-container");
 const form = document.querySelector("#form");
 
 class UI {
-	addBook(book) {
+
+	static addBook(book) {
 		const bookDiv = document.createElement("div");
 		const h2 = document.createElement("h2");
 		const h3 = document.createElement("h3");
@@ -29,25 +30,30 @@ class UI {
 		localStorage.setItem("books", bookJson);
 	}
 
-	displayBooks() {
+	static displayBooks() {
 		if (localStorage.getItem("books") === null) {
 			myBooks = [];
 		} else {
 			myBooks = JSON.parse(localStorage.getItem("books"));
+		
 		}
 		myBooks.forEach((element) => {
-			addBook(element);
+			
+			UI.addBook(element);
 		});
+
+		
 	}
 
-	clearFields() {
+	static clearFields() {
 		document.querySelector("#title").value = "";
 		document.querySelector("#author").value = "";
 	}
 
-	deleteBook(bookId) {
+	static deleteBook(bookId) {
 		myBooks = myBooks.filter((book) => book.id !== bookId);
 		localStorage.setItem("books", JSON.stringify(myBooks));
+		
 	}
 }
 
@@ -66,10 +72,13 @@ form.addEventListener("submit", (e) => {
 	const ui = new UI();
 	// Display Book in UI
 	myBooks = myBooks.concat(book);
-	ui.addBook(book);
+	UI.addBook(book);
 	// Clear Fields
-	ui.clearFields();
+	console.log(myBooks);
+	UI.clearFields();
 });
+
+window.addEventListener('load', UI.displayBooks());
 
 //Event Listener for delete a book
 container.addEventListener("click", (e) => {
