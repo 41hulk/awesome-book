@@ -26,6 +26,11 @@ function addBook(book) {
 }
 
 function displayBooks() {
+	if(localStorage.getItem('books')===null){
+		myBooks=[]
+	}else{
+		myBooks = JSON.parse(localStorage.getItem('books'));
+	}
   myBooks.forEach((element) => {
     addBook(element);
   });
@@ -38,6 +43,7 @@ function clearFields() {
 
 function deleteBook(bookId) {
   myBooks = myBooks.filter((book) => book.id !== bookId);
+  localStorage.setItem('books',JSON.stringify(myBooks))
 }
 
 const form = document.querySelector('#form');
