@@ -21,6 +21,8 @@ function addBook(book) {
 	bookDiv.appendChild(h3);
 	bookDiv.appendChild(removeBtn);
 	container.appendChild(bookDiv);
+	const bookJson = JSON.stringify(myBooks);
+	localStorage.setItem("books", bookJson);
 }
 
 function displayBooks() {
@@ -52,6 +54,7 @@ form.addEventListener("submit", (e) => {
 	//Display Book in UI
 	myBooks = myBooks.concat(book);
 	addBook(book);
+	console.log(myBooks);
 	//Clear Fields
 	clearFields();
 });
