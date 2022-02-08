@@ -54,7 +54,6 @@ form.addEventListener('submit', (e) => {
   // Display Book in UI
   myBooks = myBooks.concat(book);
   addBook(book);
-  console.log(myBooks);
   // Clear Fields
   clearFields();
 });
