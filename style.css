@@ -27,6 +27,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   text-align: center;
+
   /* justify-content: center; */
 }
 
@@ -86,9 +87,11 @@ h3 {
 section.active {
   display: block;
 }
+
 section {
   display: none;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -96,16 +99,20 @@ section {
   align-items: center;
   border: 2px black solid;
 }
+
 .date {
   float: right;
   padding-right: 3em;
 }
+
 .link {
   display: flex;
 }
+
 .link-items {
-  margin: 0px 20px;
+  margin: 0 20px;
 }
+
 footer {
   padding: 20px;
   margin: 4px 10px;
