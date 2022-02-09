@@ -1,5 +1,7 @@
 body {
   background-color: #f8efba;
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -7,6 +9,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: #2c3a47;
+  list-style: none;
+  text-decoration: none;
 }
 
 h2,
@@ -22,14 +26,8 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-.hr {
-  width: 80px;
-  background-color: #333;
-  height: 2px;
-  margin: 20px 0;
+  text-align: center;
+  /* justify-content: center; */
 }
 
 #form {
@@ -83,4 +81,34 @@ h3 {
 .book-container .single-book .delete {
   position: absolute;
   right: 2%;
+}
+
+section.active {
+  display: block;
+}
+section {
+  display: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 3em;
+  align-items: center;
+  border: 2px black solid;
+}
+.date {
+  float: right;
+  padding-right: 3em;
+}
+.link {
+  display: flex;
+}
+.link-items {
+  margin: 0px 20px;
+}
+footer {
+  padding: 20px;
+  margin: 4px 10px;
+  border: 2px black solid;
+  text-align: center;
 }
