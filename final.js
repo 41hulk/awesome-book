@@ -41,6 +41,8 @@ class UI {
 	}
 
 	static displayBooks() {
+		const currentDate = new Date();
+        document.querySelector('.date').innerHTML = currentDate;
 		if (localStorage.getItem("books") === null) {
 			UI.myBooks = [];
 		} else {
