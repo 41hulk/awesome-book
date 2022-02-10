@@ -41,6 +41,8 @@ class UI {
   }
 
   static displayBooks() {
+    const currentDate = new Date();
+    document.querySelector('.date').innerHTML = currentDate;
     if (localStorage.getItem('books') === null) {
       UI.myBooks = [];
     } else {
@@ -93,3 +95,32 @@ container.addEventListener('click', (e) => {
 });
 
 window.addEventListener('DOMContentLoaded', UI.displayBooks());
+
+const add = document.querySelector('#add');
+add.addEventListener('click', () => {
+  const addbook = document.querySelector('#add-new');
+  addbook.classList.add('active');
+  const list = document.querySelector('#listbook');
+  list.classList.remove('active');
+  const contact = document.querySelector('#contact');
+  contact.classList.remove('active');
+});
+
+const contact = document.querySelector('#contactID');
+contact.addEventListener('click', () => {
+  const contacts = document.querySelector('#contact');
+  contacts.classList.add('active');
+  const addbook = document.querySelector('#add-new');
+  addbook.classList.remove('active');
+  const list = document.querySelector('#listbook');
+  list.classList.remove('active');
+});
+
+const list = document.querySelector('#list');
+list.addEventListener('click', () => {
+  document.querySelector('#listbook').classList.add('active');
+  const contacts = document.querySelector('#contact');
+  contacts.classList.remove('active');
+  const addbook = document.querySelector('#add-new');
+  addbook.classList.remove('active');
+});

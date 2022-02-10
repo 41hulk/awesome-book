@@ -8,21 +8,55 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<header class="navbar">
+			<h1 class="logo">Awesome Books</h1>
+			<nav>
+				<ul class="link">
+					<li class="link-items"><a href="#listbook" id="list">List</a></li>
+					<li class="link-items"><a href="#add-new" id="add">Add new</a></li>
+					<li class="link-items"><a href="#contact" id="contactID">contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="date"></div>
 		<div class="container">
-			<h1>All awesome Books</h1>
-			<div class="book-container"></div>
-			<div class="hr"></div>
-			<form id="form">
-				<h1>Add a new Book</h1>
-				<div class="form-group">
-					<input type="text" placeholder="Title" id="title" />
-				</div>
-				<div class="form-group">
-					<input type="text" placeholder="Author" id="author" />
-				</div>
-				<input class="submitBtn" type="submit" value="Add Book" />
-			</form>
+
+			<section  class="active" id="listbook">
+				<h1>All awesome Books</h1>
+				<div class="book-container"></div>
+				
+			</section>
+
+			<section  id="add-new">
+				<form id="form">
+					<h1>Add a new Book</h1>
+					<div class="form-group">
+						<input type="text" placeholder="Title" id="title" />
+					</div>
+					<div class="form-group">
+						<input type="text" placeholder="Author" id="author" />
+					</div>
+					<input class="submitBtn" type="submit" value="Add Book" />
+				</form>
+			</section>
+
+			<section  id="contact">
+				<h2>Contact information</h2>
+				<p>
+					Do you have any questions or you just want to say "Hello"?
+					You can reach out to us!
+				</p>
+				<ul>
+					<li>Our e-mail: example@mail.com</li>
+					<li>Our phone number: 001122334455</li>
+					<li>Our address: Streetname 22, Silicon valley, Country</li>
+				</ul>
+			</section>
+
 		</div>
+		<footer>
+			copyright 2022
+		</footer>
 		<script src="final.js"></script>
 	</body>
 </html>
